@@ -1,0 +1,30 @@
+Experiment 1
+Type of counters     BubbleSort InsertSort SelectSort  QuickSort  ShellSort   HeapSort
+Times of comparison:        293        293         76        171        134         69
+Times of movement  :        879        357         90        110        239        252
+
+Experiment 2
+Type of counters     BubbleSort InsertSort SelectSort  QuickSort  ShellSort   HeapSort
+Times of comparison:       2335       2335        331        673        702        248
+Times of movement  :       7005       2517        273        375       1114        883
+
+Experiment 3
+Type of counters     BubbleSort InsertSort SelectSort  QuickSort  ShellSort   HeapSort
+Times of comparison:        117        117         42         76         74         36
+Times of movement  :        351        147         51         60        128        138
+
+Experiment 4
+Type of counters     BubbleSort InsertSort SelectSort  QuickSort  ShellSort   HeapSort
+Times of comparison:       1186       1186        186        492        384        176
+Times of movement  :       3558       1314        198        259        670        614
+
+Experiment 5
+Type of counters     BubbleSort InsertSort SelectSort  QuickSort  ShellSort   HeapSort
+Times of comparison:       1829       1829        270        544        434        217
+Times of movement  :       5487       1989        246        327        770        800
+
+Experiment 6
+Type of counters     BubbleSort InsertSort SelectSort  QuickSort  ShellSort   HeapSort
+Times of comparison:       1108       1108        148        406        315        170
+Times of movement  :       3324       1226        183        239        565        572
+
