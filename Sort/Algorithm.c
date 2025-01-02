@@ -22,13 +22,14 @@ void BubbleSort(int *array, int length){
 	int j, x, lastExchangeIndex;
 	while(i > 1){
 		lastExchangeIndex = 1;
-		for(j = 1; j < i; j++)
+		for(j = 1; j < i; j++){
+            compareCount++;
 			if(array[j] > array[j+1]){
-                compareCount++;
 				x=array[j]; array[j]=array[j+1]; array[j+1]=x;  // 交换
                 moveCount += 3;
 				lastExchangeIndex = j;	//记录最后一次交换的位置
 			}
+        }
 		i = lastExchangeIndex;
 	}
 }
@@ -38,8 +39,8 @@ void InsertSort(int *array, int length){
     moveCount = 0;
     int i, j;
 	for(i = 2; i <= length; i++){
+        compareCount++;
 	    if(array[i] < array[i-1]){
-            compareCount++;
             array[0] = array[i];    // 复制哨兵
             array[i] = array[i-1];
             moveCount += 2;
@@ -62,11 +63,12 @@ void SelectSort(int *array, int length){
         // 找到最小关键字的索引
         MinIndex = i;
         for(j = i+1; j <= length; j++){
+            compareCount++;
             if(array[j] < array[MinIndex]){
-                compareCount++;
                 MinIndex = j;
             }
         }
+        compareCount++;
         // 交换最小关键字
         if(i != MinIndex){
             x=array[i]; array[i]=array[MinIndex]; array[MinIndex]=x;
@@ -99,7 +101,6 @@ int Partition(int *array, int low, int high){
 
 void QuickSort(int *array, int low, int high){
     if(low < high){
-        compareCount++;
         int x = Partition(array, low, high);
         QuickSort(array, low, x-1);     // 将子表递归排序
         QuickSort(array, x+1, high);
@@ -110,8 +111,8 @@ void OneShellSort(int *array, int length, int dk){
     // 一次希尔排序,0位置处只是暂存单元，不是哨兵，当j<=0时，插入位置已经找到
     int i, j;
     for(i =dk+1; i <= length; i++){
+        compareCount++;
         if(array[i-dk] > array[i]){
-            compareCount++;
             array[0] = array[i];
             array[i] = array[i-dk];
             moveCount += 2;
@@ -131,7 +132,6 @@ void ShellSort(int *array, int length){
     moveCount = 0;
     int dk = length / 2;    // 使用数组长度的一半作为初始增量，增量依次除以2，直到1为止
     while(dk>= 1){
-        compareCount++;
         OneShellSort(array, length, dk);
         dk /= 2;
     }
@@ -141,14 +141,10 @@ void HeapAdjust(int *array, int s, int m){
     int rc, j;
     rc = array[s];
     for(j = s*2; j <= m; j *= 2){   // 沿关键字较大的孩子结点向下筛选
-        if(j<m && array[j] <  array[j+1]){  // j为关键字较大的记录的下标
-            compareCount++;
-            j++;
-        }
-        if(rc >= array[j]){
-            compareCount++; 
-            break;          // rc应该插入s位置处
-        }
+        compareCount++;
+        if(j<m && array[j] <  array[j+1])   j++;    // j为关键字较大的记录的下标
+        compareCount++; 
+        if(rc >= array[j])  break;          // rc应该插入s位置处
         array[s] = array[j];    
         moveCount++;
         s = j;

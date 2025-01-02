@@ -7,7 +7,7 @@ int main(){
     printf("The origin array is: ");
     PrintArray(arr, len);
     BubbleSort(arr, len);
-    printf("Sorted into: ");
+    printf("Sorted into:         ");
     PrintArray(arr, len);
     BSCC = compareCount;
     BSMC = moveCount;
@@ -17,7 +17,7 @@ int main(){
     printf("The origin array is: ");
     PrintArray(arr, len);
     InsertSort(arr, len);
-    printf("Sorted into: ");
+    printf("Sorted into:         ");
     PrintArray(arr, len);
     ISCC = compareCount;
     ISMC = moveCount;
@@ -27,7 +27,7 @@ int main(){
     printf("The origin array is: ");
     PrintArray(arr, len);
     SelectSort(arr, len);
-    printf("Sorted into: ");
+    printf("Sorted into:         ");
     PrintArray(arr, len);
     SSCC = compareCount;
     SSMC = moveCount;
@@ -38,7 +38,7 @@ int main(){
     PrintArray(arr, len);
     compareCount = 0; moveCount = 0;
     QuickSort(arr, 1, len);
-    printf("Sorted into: ");
+    printf("Sorted into:         ");
     PrintArray(arr, len);
     QSCC = compareCount;
     QSMC = moveCount;
@@ -48,7 +48,7 @@ int main(){
     printf("The origin array is: ");
     PrintArray(arr, len);
     ShellSort(arr, len);
-    printf("Sorted into: ");
+    printf("Sorted into:         ");
     PrintArray(arr, len);
     ShSCC = compareCount;
     ShSMC = moveCount;
@@ -58,7 +58,7 @@ int main(){
     printf("The origin array is: ");
     PrintArray(arr, len);
     HeapSort(arr, len);
-    printf("Sorted into: ");
+    printf("Sorted into:         ");
     PrintArray(arr, len);
     HSCC = compareCount;
     HSMC = moveCount;
