@@ -2,7 +2,7 @@
 
 int GenerateArray(int *array){
 	srand((unsigned int)time(NULL));
-	int length = rand() % 100 + 1;
+	int length = rand() % 10000 + 1;
 	for(int i = 1; i <= length; i++)
 		array[i] = rand() % 100; //生成0到99之间的随机数
 	return length;
@@ -32,6 +32,21 @@ void BubbleSort(int *array, int length){
         }
 		i = lastExchangeIndex;
 	}
+}
+
+void Sort(int *array, int length){
+    compareCount = 0;
+    moveCount = 0;
+    int x;
+    for(int i = 1; i <= length; i++){
+        for(int j = 1; j <= length-i-1; j++){
+            compareCount++;
+            if(array[j+1] > array[j]){
+                x=array[i]; array[i]=array[j]; array[j]=x;
+                moveCount += 3;
+            }
+        }
+    }
 }
 
 void InsertSort(int *array, int length){
