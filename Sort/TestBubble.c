@@ -1,15 +1,16 @@
 #include "Sort.h"
 
-
 void testA(int *arr, int len){
-    int newarr[len];
-    memcpy(newarr, arr, len*sizeof(int));
+    int newarr[len+1];
+    memcpy(newarr, arr, (len+1)*sizeof(int));
     BubbleSort(newarr, len);
+    PrintArray(newarr, len);
 }
 void testB(int *arr, int len){
-    int newarr[len];
-    memcpy(newarr, arr, len*sizeof(int));
+    int newarr[len+1];
+    memcpy(newarr, arr, (len+1)*sizeof(int));
     Sort(newarr, len);
+    PrintArray(newarr, len);
 }   
     
 int main(){

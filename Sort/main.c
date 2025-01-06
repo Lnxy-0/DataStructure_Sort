@@ -16,7 +16,7 @@ int main(){
     len = GenerateArray(arr);
     printf("The origin array is: ");
     PrintArray(arr, len);
-    InsertSort(arr, len);
+    Sort(arr, len);
     printf("Sorted into:         ");
     PrintArray(arr, len);
     CC = compareCount;
