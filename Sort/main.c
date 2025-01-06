@@ -12,6 +12,16 @@ int main(){
     BSCC = compareCount;
     BSMC = moveCount;
 
+    printf("---------------Sort---------------\n");
+    len = GenerateArray(arr);
+    printf("The origin array is: ");
+    PrintArray(arr, len);
+    Sort(arr, len);
+    printf("Sorted into:         ");
+    PrintArray(arr, len);
+    CC = compareCount;
+    MC = moveCount;
+    
     printf("---------------InsertSort---------------\n");
     len = GenerateArray(arr);
     printf("The origin array is: ");
@@ -64,6 +74,7 @@ int main(){
     HSMC = moveCount;
 
     printf("\n");
+    printf("?Sort: %d %d \n", CC, MC);
     printf("Type of counters     BubbleSort InsertSort SelectSort  QuickSort  ShellSort   HeapSort\n");
     printf("Times of comparison: %10d %10d %10d %10d %10d %10d\n", BSCC, ISCC, SSCC, QSCC, ShSCC, HSCC);
     printf("Times of movement  : %10d %10d %10d %10d %10d %10d\n", BSMC, ISMC, SSMC, QSMC, ShSMC, HSMC);
